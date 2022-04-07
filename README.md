@@ -1,24 +1,9 @@
-# README
+# Rails Form Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Rails project to practice form creation and interaction.
 
-* Ruby version
+## Objectives
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Practice form creation and submitting using pure HTML.
