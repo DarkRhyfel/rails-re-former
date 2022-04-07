@@ -1,0 +1,44 @@
+<h1>Edit User</h1>
+<!--
+<form action="/users" method="post" accept-charset="UTF-8">
+  <label for="user_username">Username:</label>
+  <input type="text" name="user[username]" id="user_username">
+  <label for="user_email">Email:</label>
+  <input type="email" name="user[email]" id="user_email">
+  <label for="user_password">Password:</label>
+  <input type="password" name="user[password]" id="user_password">
+  <button type="submit">Create User</button>
+</form>
+-->
+<!--
+<%= form_tag '/users', method: 'post' do %>
+  <%= label_tag :user_username, 'Username:' %>
+  <%= text_field :user, :username %>
+  <%= label_tag :user_email, 'Email:' %>
+  <%= email_field :user, :email %>
+  <%= label_tag :user_password, 'Password:' %>
+  <%= password_field :user, :password %>
+  <%= submit_tag 'Create User' %>
+<% end %>
+-->
+<%= form_with model: @user do |user_form| %>
+  <% if @user.errors.any? %>
+    <div>
+      <h2><%= pluralize(@user.errors.count, 'error') %> prevented the user update.</h2>
+    </div>
+
+    <ul>
+      <% @user.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= user_form.label :username, 'Username:' %>
+  <%= user_form.text_field :username %>
+  <%= user_form.label :email, 'Email:' %>
+  <%= user_form.email_field :email, placeholder: 'example@example.com' %>
+  <%= user_form.label :password, 'Password:' %>
+  <%= user_form.password_field :password %>
+  <%= user_form.submit 'Update User' %>
+<% end %>

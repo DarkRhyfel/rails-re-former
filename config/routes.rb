@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # Model routes
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create edit update]
 end
