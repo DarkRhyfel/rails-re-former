@@ -3,7 +3,7 @@
 # Controller for users
 class UsersController < ApplicationController
   def new
-    # pass
+    @user = User.new
   end
 
   def create

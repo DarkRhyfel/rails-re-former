@@ -10,6 +10,7 @@
   <button type="submit">Create User</button>
 </form>
 -->
+<!--
 <%= form_tag '/users', method: 'post' do %>
   <%= label_tag :user_username, 'Username:' %>
   <%= text_field :user, :username %>
@@ -18,4 +19,14 @@
   <%= label_tag :user_password, 'Password:' %>
   <%= password_field :user, :password %>
   <%= submit_tag 'Create User' %>
+<% end %>
+-->
+<%= form_with model: @user do |user_form| %>
+  <%= user_form.label :username, 'Username:' %>
+  <%= user_form.text_field :username, value: 'User123' %>
+  <%= user_form.label :email, 'Email:' %>
+  <%= user_form.email_field :email, placeholder: 'example@example.com' %>
+  <%= user_form.label :password, 'Password:' %>
+  <%= user_form.password_field :password %>
+  <%= user_form.submit 'Create User' %>
 <% end %>
